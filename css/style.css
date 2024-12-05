@@ -1,0 +1,38 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+
+nav {
+    padding: 15px;
+    background-color: rgb(46, 32, 172);
+}
+
+nav ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    color: white;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.divGeneral {
+    display: grid;
+    grid-template-columns: 1000px 1000px;
+
+}
+
+.divElemento {
+    border: 1px solid rgb(46, 32, 172);
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    margin: 1%;
+}
