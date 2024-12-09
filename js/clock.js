@@ -26,7 +26,7 @@ function sacarFecha() {
 
         divMensaje.innerHTML =
         `
-        <h3>¡Que c*** haces aquí! Anda a descansar!</h3>
+        <h3>¡Que haces aquí! Anda a descansar!</h3>
         `
     }
     
