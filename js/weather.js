@@ -55,8 +55,88 @@ LOCALIZACIÓN: getCurrentPosition()
 
 */
 
-const ciudad = navigator.geolocation.getCurrentPosition()
+const divLocation = document.getElementById("divLocacion")
+const divTiempo = document.getElementById("divTiempo")
+const divForecast = document.getElementById("divForecast")
+
+// FUNCIÓN DE GEOLOCALIZACIÓN
+
+const getLocation = () => {
+    
+    navigator.geolocation.getCurrentPosition(
+    
+    (position) => {
+    
+    const latitud = position.coords.latitude
+    const longitud =  position.coords.longitude
+
+    getWeather(latitud, longitud)
+    
+    
+    },
+
+    (error) => {
+
+    getWeather("madrid")
+
+    }
+    )
+}
+
+// LLAMADA API A WEATHER CON ASYN/AWAIT
+
+const getWeather = async (latCiudad, longCiudad) => {
+
+    try {
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=d70d493a6c7c490a85480648241112&q=${latCiudad},${longCiudad}&aqi=no`)
+        if (!response.ok) {
+            throw new Error("Ha existido un error al recuperar los datos del fetch")
+        }
+        const data = await response.json()
+        console.log(data);
+        
+        mostrarWeather(data);
+
+    }
+    catch(error) {
+        console.log("Ha ocurrido un error", error)
+    }
+}
 
 
-console.log(ciudad);
+// MOSTRAR LOS DATOS EN DOM
 
+function mostrarWeather(data) {
+
+    divLocation.innerHTML = 
+        `
+        <h2>${data.location.name} - ${data.location.country} / ${data.location.region}</h2>
+        <p>${data.current.condition.text}</p>
+        `
+        
+    divTiempo.innerHTML =
+        `
+        <img class"weather-icon" src="https:${data.current.condition.icon}" alt="${data.current.condition.text}">
+        <div class"divTiempoGrados">
+            <h1>${data.current.temp_c}</h1>
+        </div>
+        <div class"divTiempoDatos">
+            <p>Precipitaciones: ${data.current.precip_mm}%</p>
+            <p>Humedad: ${data.current.humidity}%</p>
+            <p>Viento: ${data.current.wind_kph} Km/h</p>
+        </div>
+        `
+
+    divForecast.innerHTML =
+        `
+        <img class"weather-icon" src="https:${data.current.condition.icon}" alt="${data.current.condition.text}">
+        `
+    
+    divForecast.innerHTML = "<p>funciona forecast</p>"
+
+}
+
+
+// LLAMADAS A LAS FUNCIONES
+
+getLocation()
