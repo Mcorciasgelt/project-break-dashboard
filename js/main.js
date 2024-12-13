@@ -1,5 +1,5 @@
 
-const divElementoActivo = document.getElementById("divReloj")
+/* const divElementoActivo = document.getElementById("divReloj")
 
 const mostrarFecha = setInterval(sacarFecha, 1000)
 
@@ -14,4 +14,4 @@ function sacarFecha() {
     console.log(fechaActual)
 
     divElementoActivo.innerText = fechaActual
-}
+} */

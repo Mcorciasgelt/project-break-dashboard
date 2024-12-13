@@ -87,8 +87,8 @@ const mostrarDetalles = (data) => {
 
     divTiempo.innerHTML =
     `
-    <img class"weather-icon" src="https:${data.current.condition.icon}" alt="${data.current.condition.text}">
-    <div class"divTiempoGrados">
+    <img class="weather-icon" src="https:${data.current.condition.icon}" alt="${data.current.condition.text}">
+    <div class="divTiempoGrados">
         <h1>${data.current.temp_c} ºC</h1>
     </div>
     <div class"divTiempoDatos">
@@ -104,7 +104,9 @@ const mostrarForecast = (data) => {
 
     const forecastHoras = data.forecast.forecastday[0].hour
 
-    forecastHoras.forEach(hora => {
+// OPCIÓN CON FOREACH
+
+/*     forecastHoras.forEach(hora => {
 
         const divHora = document.createElement("div")
         divHora.classList.add("divHora")
@@ -124,6 +126,23 @@ const mostrarForecast = (data) => {
 
         liHora.appendChild(divHora)
         ulForecast.appendChild(liHora)
-    })
+    }) */
+
+
+// OPCIÓN CON MAP
+
+        const forecastHTML = forecastHoras.map(hora => {
+            return `
+                <li class="liHora">
+                    <div class="divHora">
+                        <h4>${hora.time.slice(11)}</h4>
+                        <h4>${hora.temp_c} ºC</h4>
+                        <img src="https:${hora.condition.icon}" class="weatherHora-icon" alt="${hora.condition.text}">
+                    </div>
+                </li>
+            `;
+        });
+        
+        ulForecast.innerHTML = forecastHTML.join('');
 
 }
