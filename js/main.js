@@ -15,3 +15,23 @@ function sacarFecha() {
 
     divElementoActivo.innerText = fechaActual
 } */
+
+function cambiarBackground () {
+
+
+
+    const imagenAleat = Math.floor(Math.random()*10) + 1
+    const urlBase = "/img/background"
+    
+    console.log(imagenAleat);
+    
+    document.body.style.backgroundImage = `url("${urlBase}${imagenAleat}.jpg")`
+    document.body.style.backgroundSize = "cover"
+    document.body.style.backgroundPosition = "center"
+    document.body.style.backgroundRepeat = "no-repeat"
+
+}
+
+cambiarBackground()
+setInterval(cambiarBackground,15000)
+
