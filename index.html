@@ -24,12 +24,52 @@
     <div class="divGeneral">
 
         <section class="sectionElemento" id="sectionReloj">
+            
             <div class="divElemento" id="divReloj">
 
             </div>
+
+        </section>
+
+        <section class="sectionElemento" id="sectionContraseñas">
+            
+            <div class="divElemento" id="divInputPass">
+                <input type="number" min="12" max="50" id="inputLongitud" placeholder="12-50">
+                <button id="btnGenerar" type="button">
+                    Generar contraseña 
+                </button>
+            </div>
+
+            <div class="divElemento" id="divPass">
+
+            </div>
+
+        </section>
+
+        <section class="sectionElemento" id="sectionTiempo">
+            
+            <div class="divElemento" id="divTiempoGral">
+
+                <div class="divTiempoDetalle" id="divLocacion">
+
+                </div>
+    
+                <div class="divTiempoDetalle" id="divTiempo">
+    
+                </div>
+    
+                <div class="divTiempoDetalle" id="divForecast">
+                    <ul id="ulForecast">
+                        
+                    </ul>
+                </div>
+
+            </div>
+
         </section>
 
         <section class="sectionElemento" id="sectionEnlaces">
+            
             <div id="divInput">
                 
                 <label for="inputTitulo" id="lbTitulo">Título</label>
@@ -43,38 +83,7 @@
             <div class="divElemento" id="divEnlaces">
 
             </div>
-        </section>
-
-        <section class="sectionElemento" id="sectionTiempo">
-            <div class="divElemento" id="divTiempoGral">
-
-                <div id="divLocacion">
-
-                </div>
-    
-                <div id="divTiempo">
-    
-                </div>
-    
-                <div id="divForecast">
-                    <ul id="ulForecast">
-                        
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="sectionElemento" id="sectionContraseñas">
-
-            <input type="number" min="12" max="50" id="inputLongitud" placeholder="12-50">
-            <button id="btnGenerar" type="button">
-                Generar contraseña 
-            </button>
-
-            <div class="divElemento" id="divPass">
-
-            </div>
+            
         </section>
     
     </div>
@@ -86,5 +95,6 @@
     <script src="./js/links.js"></script>
     <script src="./js/weather.js"></script>
     <script src="./js/pass.js"></script>
+    
 </body>
 </html>

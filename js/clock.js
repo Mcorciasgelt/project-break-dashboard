@@ -21,8 +21,8 @@ function sacarFecha() {
     divElementoActivo.innerHTML = 
         
         `
-        <h1>Hoy es el ${fechaActual}</h1>
-        <h2>y la hora es ${horaActual}</h2>
+        <h1>${fechaActual}</h1>
+        <h2>${horaActual}</h2>
         `
     }
 

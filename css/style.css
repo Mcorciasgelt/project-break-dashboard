@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #f2f2f263;
     margin: 0;
     height: 100vh;
     overflow: hidden;
@@ -24,6 +24,10 @@ nav a {
     color: white;
 }
 
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .divGeneral {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -35,20 +39,27 @@ nav a {
 
 }
 
-.sectionElemento {
+.divElementoActivo, .sectionElemento, .sectionActivo {
     border: 2px solid rgb(46, 32, 172);
     border-radius: 15px;
     padding: 5px;
     margin: 1%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     font-size: 1.2rem;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 6px 10px rgba(0, 0, 0, 0.3)
 }
+
+.sectionElemento, .sectionActivo{
+
+    overflow: auto;
+}
+
 
 .sectionElemento a {
     text-decoration: none;
@@ -61,4 +72,73 @@ nav a {
     transform: translateY(-3px);
     transition: box-shadow 0.3s, transform 0.3s;
 
+}
+
+#ulForecast {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.divTiempoDetalle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#ulForecast li {
+    flex: 1 1 10%;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+#divEnlaces {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    background-color: rgb(46, 32, 172);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(46, 32, 172, 0.8);
+}
+
+input {
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.btnEliminar {
+    border-radius: 30px;
+    transform: scale(.5);
+    background-color: rgb(250, 74, 74);
+}
+
+@media screen and (max-width: 768px) {
+    .divGeneral {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
 }
