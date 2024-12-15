@@ -14,6 +14,7 @@ const divForecast = document.getElementById("divForecast")
 const ulForecast = document.getElementById("ulForecast")
 const apiKey = "d70d493a6c7c490a85480648241112"
 
+
 // FUNCIÓN DE GEOLOCALIZACIÓN
 
 const getLocation = () => {

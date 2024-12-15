@@ -3,6 +3,7 @@ const inputLongitud = document.getElementById("inputLongitud")
 const botonGenerar = document.getElementById("btnGenerar")
 const divPass = document.getElementById("divPass")
 
+
 // EN CASO QUE SE CAMBIEN LOS MÍNIMOS Y MÁXIMOS DEL INPUT NO AFECTA AL CÓDIGO
 const minLongitud = parseInt(inputLongitud.min)
 const maxLongitud = parseInt(inputLongitud.max)

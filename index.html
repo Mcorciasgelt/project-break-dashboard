@@ -23,26 +23,68 @@
 
     <div class="divGeneral">
 
-        <div class="divElemento" id="divReloj">
-            <p><a href="clock.html">RELOJ</a></p>
-        </div>
+        <section class="sectionElemento" id="sectionReloj">
+            <div class="divElemento" id="divReloj">
 
-        <div class="divElemento" id="divEnlaces">
-            <p><a href="links.html">ENLACES</a></p>
-        </div>
+            </div>
+        </section>
 
-        <div class="divElemento" id="divTiempo">
-            <p><a href="weather.html">EL TIEMPO</a></p>
-        </div>
+        <section class="sectionElemento" id="sectionEnlaces">
+            <div id="divInput">
+                
+                <label for="inputTitulo" id="lbTitulo">Título</label>
+                <input type="text" id="inputTitulo" placeholder="Escribe el título">
+                <label for="inputLink" id="lbLink">Enlace</label>
+                <input type="text" id="inputLink" placeholder="Introduce el enlace">
+                <button id="btnAgregar">Agregar Link</button>
 
-        <div class="divElemento" id="divContraseñas">
-            <p><a href="pass.html">CONTRASEÑAS</a></p>
-        </div>
+            </div>
+
+            <div class="divElemento" id="divEnlaces">
+
+            </div>
+        </section>
+
+        <section class="sectionElemento" id="sectionTiempo">
+            <div class="divElemento" id="divTiempoGral">
+
+                <div id="divLocacion">
+
+                </div>
+    
+                <div id="divTiempo">
+    
+                </div>
+    
+                <div id="divForecast">
+                    <ul id="ulForecast">
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sectionElemento" id="sectionContraseñas">
+
+            <input type="number" min="12" max="50" id="inputLongitud" placeholder="12-50">
+            <button id="btnGenerar" type="button">
+                Generar contraseña 
+            </button>
+
+            <div class="divElemento" id="divPass">
+
+            </div>
+        </section>
     
     </div>
 
     </main>
 
     <script src="./js/main.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/links.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/pass.js"></script>
 </body>
 </html>

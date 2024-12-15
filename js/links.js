@@ -2,7 +2,8 @@
 const inputTitulo = document.getElementById("inputTitulo")
 const inputLink = document.getElementById("inputLink")
 const btnAgregar = document.getElementById("btnAgregar")
-const sectionEnlaces = document.getElementById("sectionEnlaces")
+const divEnlaces = document.getElementById("divEnlaces")
+
 
 btnAgregar.addEventListener("click", () => {
 
@@ -27,7 +28,7 @@ function agregarEnlace(titulo, link) {
     </div>
     `
 
-    sectionEnlaces.innerHTML += template
+    divEnlaces.innerHTML += template
 
     botonesEliminar()
 }
@@ -61,7 +62,7 @@ function borrarLink(index) {
 
 
 function cargarEnlaces() {
-    sectionEnlaces.innerHTML = ""
+    divEnlaces.innerHTML = ""
     const links = JSON.parse(localStorage.getItem("links")) || []
 
     links.forEach(({titulo, link}) => {
