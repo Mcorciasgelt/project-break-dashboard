@@ -21,7 +21,7 @@ function cambiarBackground () {
 
 
     const imagenAleat = Math.floor(Math.random()*10) + 1
-    const urlBase = "/img/background"
+    const urlBase = "./img/background"
     
     console.log(imagenAleat);
     
