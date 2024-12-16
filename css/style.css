@@ -48,7 +48,7 @@ nav a.active {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
     font-size: 1.2rem;
@@ -58,6 +58,8 @@ nav a.active {
 .sectionElemento, .sectionActivo{
 
     overflow: auto;
+    max-height: 85vh;
+
 }
 
 
@@ -94,9 +96,10 @@ nav a.active {
     flex: 1 1 10%;
     padding: 3px;
     background-color: rgba(0, 0, 0, 0.3);
+
     border-radius: 10px;
     margin: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(249, 249, 249, 0.2);
     text-align: center;
     color: white;
 }
@@ -134,6 +137,13 @@ input {
     border-radius: 30px;
     transform: scale(.5);
     background-color: rgb(250, 74, 74);
+}
+
+
+.weather-icon {
+    width: auto;
+    height: 100px;
+    max-width: 100%
 }
 
 @media screen and (max-width: 768px) {
